@@ -12,6 +12,7 @@ import cucumber.api.java.en.Then;
 
 public class Definition_Search 
 {
+	//create object for search page to call all fields
 	Page_Search ps=new Page_Search();
 	
 	@Given("^The user launch the softpedia application$")
@@ -33,10 +34,11 @@ public class Definition_Search
 	}
 
 	@Then("^Download the application in the list$")
-	public void download_the_application_in_the_list() throws InterruptedException 
+	public void download_the_application_in_the_list() throws Exception 
 	{
 		
 		ps.download();
+		ps.takeSnapShot("src\\test\\resources\\Screenshot\\search");
 		Thread.sleep(5000);
 		//ps.Quit();
 	}

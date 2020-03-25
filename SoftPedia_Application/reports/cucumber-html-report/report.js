@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/main/resources/feature/TestScenario.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/main/resources/feature/test.feature");
 formatter.feature({
   "line": 2,
   "name": "SoftPedia Application",
@@ -40,14 +40,14 @@ formatter.match({
   "location": "Definition_Register.the_user_launch_and_register_the_application_with_valid_and_invalid_details()"
 });
 formatter.result({
-  "duration": 82585991600,
+  "duration": 114774165300,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_Register.close_the_browser()"
 });
 formatter.result({
-  "duration": 3762619800,
+  "duration": 3555504600,
   "status": "passed"
 });
 formatter.scenario({
@@ -83,21 +83,21 @@ formatter.match({
   "location": "Definition_Login.the_user_launch_the_application()"
 });
 formatter.result({
-  "duration": 13002105800,
+  "duration": 33034189900,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_Login.clicking_on_the_user_icon_and_enter_username_and_password()"
 });
 formatter.result({
-  "duration": 1588594100,
+  "duration": 1575639300,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_Login.clicking_on_the_login_button()"
 });
 formatter.result({
-  "duration": 4038697000,
+  "duration": 4927212000,
   "status": "passed"
 });
 formatter.scenario({
@@ -143,44 +143,44 @@ formatter.match({
   "location": "Definition_Search.the_user_launch_the_softpedia_application()"
 });
 formatter.result({
-  "duration": 7661955300,
+  "duration": 8139567500,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_Search.the_User_enter_the_word_for_search()"
 });
 formatter.result({
-  "duration": 190483200,
+  "duration": 178625400,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_Search.click_go_button()"
 });
 formatter.result({
-  "duration": 4747275700,
+  "duration": 19937401700,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_Search.download_the_application_in_the_list()"
 });
 formatter.result({
-  "duration": 12713155100,
+  "duration": 39323979500,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_Search.Check_file_is_exist_or_not()"
 });
 formatter.result({
-  "duration": 3388764500,
+  "duration": 3215872800,
   "status": "passed"
 });
-formatter.scenario({
+formatter.scenarioOutline({
   "line": 24,
   "name": "Send feedback through contact us",
   "description": "",
   "id": "softpedia-application;send-feedback-through-contact-us",
-  "type": "scenario",
-  "keyword": "Scenario",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
   "tags": [
     {
       "line": 23,
@@ -205,7 +205,79 @@ formatter.step({
 });
 formatter.step({
   "line": 28,
-  "name": "The user enter a message and mail id",
+  "name": "The user enter \"\u003cmsg\u003e\" and \"\u003cemailid\u003e\" for contactus page",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 29,
+  "name": "clicking on send button",
+  "keyword": "And "
+});
+formatter.examples({
+  "line": 31,
+  "name": "",
+  "description": "",
+  "id": "softpedia-application;send-feedback-through-contact-us;",
+  "rows": [
+    {
+      "cells": [
+        "msg",
+        "emailid"
+      ],
+      "line": 33,
+      "id": "softpedia-application;send-feedback-through-contact-us;;1"
+    },
+    {
+      "cells": [
+        "hello",
+        "malarvizhimarie@gmail.com"
+      ],
+      "line": 34,
+      "id": "softpedia-application;send-feedback-through-contact-us;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 34,
+  "name": "Send feedback through contact us",
+  "description": "",
+  "id": "softpedia-application;send-feedback-through-contact-us;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 1,
+      "name": "@softpedia"
+    },
+    {
+      "line": 23,
+      "name": "@tc_04_Contactus"
+    }
+  ]
+});
+formatter.step({
+  "line": 25,
+  "name": "The user launch the browser",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 26,
+  "name": "click on i named icon and contact us",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 27,
+  "name": "click radio button from the list",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 28,
+  "name": "The user enter \"hello\" and \"malarvizhimarie@gmail.com\" for contactus page",
+  "matchedColumns": [
+    0,
+    1
+  ],
   "keyword": "Then "
 });
 formatter.step({
@@ -217,39 +289,49 @@ formatter.match({
   "location": "Definition_ContactUs.the_user_launch_the_browser()"
 });
 formatter.result({
-  "duration": 13471264600,
+  "duration": 12652693000,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_ContactUs.click_on_i_named_icon_and_contact_us()"
 });
 formatter.result({
-  "duration": 2587421500,
+  "duration": 2892200000,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_ContactUs.click_radio_button_from_the_list()"
 });
 formatter.result({
-  "duration": 146747400,
+  "duration": 3146605600,
   "status": "passed"
 });
 formatter.match({
-  "location": "Definition_ContactUs.the_user_enter_a_message_and_mail_id()"
+  "arguments": [
+    {
+      "val": "hello",
+      "offset": 16
+    },
+    {
+      "val": "malarvizhimarie@gmail.com",
+      "offset": 28
+    }
+  ],
+  "location": "Definition_ContactUs.The_user_enter_and_for_contactus_page(String,String)"
 });
 formatter.result({
-  "duration": 456000200,
+  "duration": 3607203100,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_ContactUs.clicking_on_send_button()"
 });
 formatter.result({
-  "duration": 4346939200,
+  "duration": 5413022500,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 32,
+  "line": 37,
   "name": "Softpedia News Calendar",
   "description": "",
   "id": "softpedia-application;softpedia-news-calendar",
@@ -257,28 +339,28 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 31,
+      "line": 36,
       "name": "@tc_05_Calender"
     }
   ]
 });
 formatter.step({
-  "line": 34,
+  "line": 39,
   "name": "Launch the browser for calendar",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 35,
+  "line": 40,
   "name": "Select month and year",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 36,
+  "line": 41,
   "name": "Select the date",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 37,
+  "line": 42,
   "name": "Scroll and click any news",
   "keyword": "And "
 });
@@ -286,32 +368,32 @@ formatter.match({
   "location": "Definition_Calendar.launch_the_browser_for_calendar()"
 });
 formatter.result({
-  "duration": 7488074400,
+  "duration": 11021092700,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_Calendar.select_month_and_year()"
 });
 formatter.result({
-  "duration": 2018473700,
+  "duration": 1400805700,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_Calendar.select_the_date()"
 });
 formatter.result({
-  "duration": 4517000100,
+  "duration": 25436722900,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_Calendar.scroll_and_click_any_news()"
 });
 formatter.result({
-  "duration": 5590900600,
+  "duration": 5473556000,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 40,
+  "line": 45,
   "name": "Navigation to the next page",
   "description": "",
   "id": "softpedia-application;navigation-to-the-next-page",
@@ -319,18 +401,18 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 39,
+      "line": 44,
       "name": "@tc_6_NextPage"
     }
   ]
 });
 formatter.step({
-  "line": 42,
+  "line": 47,
   "name": "The user Launch the application for nextpage",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 43,
+  "line": 48,
   "name": "Scroll Down and click next page",
   "keyword": "Then "
 });
@@ -338,14 +420,14 @@ formatter.match({
   "location": "Definition_NextPage.the_user_Launch_the_application_for_nextpage()"
 });
 formatter.result({
-  "duration": 13308712100,
+  "duration": 13498176800,
   "status": "passed"
 });
 formatter.match({
   "location": "Definition_NextPage.scroll_Down_and_click_next_page()"
 });
 formatter.result({
-  "duration": 9949485000,
+  "duration": 10213600300,
   "status": "passed"
 });
 });

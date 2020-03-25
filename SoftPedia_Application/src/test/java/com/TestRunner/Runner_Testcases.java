@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 
 @CucumberOptions
 (
-		features = "src\\main\\resources\\feature\\TestScenario.feature",
+		features = "src\\main\\resources\\feature\\test.feature",
 		plugin = {"pretty", "html:reports/cucumber-html-report","json:reports/cucumber-html-report/jsonreport","com.cucumber.listener.ExtentCucumberFormatter:reports/Extentreports/Extentreport.html"},
 		tags = {"@tc_01_Register, @tc_02_Login,"
 				+ " @tc_03_Search, @tc_04_Contactus, "

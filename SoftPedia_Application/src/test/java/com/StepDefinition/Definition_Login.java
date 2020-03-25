@@ -9,6 +9,7 @@ import cucumber.api.java.en.Then;
 
 public class Definition_Login 
 {
+	//create object for page login to call all fields
 	Page_Login pl=new Page_Login();
 	
 	@Given("^The user launch the application$")
@@ -23,8 +24,9 @@ public class Definition_Login
 	}
 
 	@Then("^clicking on the login button$")
-	public void clicking_on_the_login_button() throws InterruptedException  
+	public void clicking_on_the_login_button() throws Exception  
 	{
+		pl.takeSnapShot("src\\test\\resources\\Screenshot\\login.png");
 		pl.login_button();
 		Thread.sleep(3000);
 		pl.Quit();

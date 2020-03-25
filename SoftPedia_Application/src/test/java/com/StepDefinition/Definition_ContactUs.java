@@ -8,6 +8,7 @@ import cucumber.api.java.en.Then;
 
 public class Definition_ContactUs 
 {
+	//create object for contactus page to call all fields
 	Page_ContactUs pc=new Page_ContactUs();
 	
 	@Given("^The user launch the browser$")
@@ -23,21 +24,27 @@ public class Definition_ContactUs
 	}
 
 	@Then("^click radio button from the list$")
-	public void click_radio_button_from_the_list() 
+	public void click_radio_button_from_the_list() throws InterruptedException 
 	{
 		pc.radiobutton();
+		Thread.sleep(3000);
 	}
 
-	@Then("^The user enter a message and mail id$")
-	public void the_user_enter_a_message_and_mail_id()
+	@Then("^The user enter \"([^\"]*)\" and \"([^\"]*)\" for contactus page$")
+	public void The_user_enter_and_for_contactus_page(String msg, String emailid) throws Exception
 	{
-		pc.message_email();
+		pc.message_email(msg, emailid);
+		Thread.sleep(3000);
+	
+		
 	}
 
 	@Then("^clicking on send button$")
-	public void clicking_on_send_button() throws InterruptedException 
+	public void clicking_on_send_button() throws Exception 
 	{
+		
 		pc.send_button();
+		pc.takeSnapShot("src\\test\\resources\\Screenshot\\contactus.png");
 		Thread.sleep(3000);
 		pc.Quit();
 	}

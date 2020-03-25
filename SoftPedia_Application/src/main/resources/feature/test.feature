@@ -19,7 +19,7 @@ Scenario: Search for application
 	Then Click go button
 	Then Download the application in the list
 	And Check file is exist or not
-	
+
 @tc_04_Contactus
 Scenario Outline: Send feedback through contact us
 	Given The user launch the browser
@@ -31,8 +31,8 @@ Scenario Outline: Send feedback through contact us
 Examples: 
 
 		|msg	        |emailid	                | 
-		|hello      	|malarvizhimarie@gmail.com	|	
-
+		|hello      	|malarvizhimarie@gmail.com	|
+		
 @tc_05_Calender	
 Scenario: Softpedia News Calendar
 	
@@ -46,5 +46,3 @@ Scenario: Navigation to the next page
 	
 	Given The user Launch the application for nextpage
 	Then Scroll Down and click next page
-	
-	

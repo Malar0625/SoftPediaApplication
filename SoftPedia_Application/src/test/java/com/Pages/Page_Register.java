@@ -19,7 +19,8 @@ public class Page_Register
 {
 	WebDriver driver;
 	WebElement Register;
-	Excel_data ed = new Excel_data();
+	Excel_data ed = new Excel_data();//create object for excel
+	// Page for Registration
 	public void registeration() throws IOException
 	{
 		for(int i=1;i<=3;i++)
@@ -30,22 +31,25 @@ public class Page_Register
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 			driver.get("https://www.softpedia.com/");
-		
+			//Declaration of locators
+			
 			Register=driver.findElement(By.xpath("//*[@id=\"navicos\"]/li[3]"));
 			Register.click();
 			System.out.println("click the user icon");
 			Register=driver.findElement(By.xpath("//*[@id=\"spovl1\"]/div/div/div[1]/a[3]"));
 			Register.click();
 			System.out.println("click on register now button");
-		
-		
-			driver.findElement(By.id("reguser")).sendKeys(ed.excel_username(i));
-			driver.findElement(By.id("regmail")).sendKeys(ed.Email(i));
-			driver.findElement(By.id("regpass1")).sendKeys(ed.excel_password(i));
-			driver.findElement(By.id("regpass2")).sendKeys(ed.excel_repassword(i));
+			
+			//Call each fields with their reference variable and get data from excel
+			driver.findElement(By.id("reguser")).sendKeys(ed.excel_username(i));//get username
+			driver.findElement(By.id("regmail")).sendKeys(ed.Email(i));//get email
+			driver.findElement(By.id("regpass1")).sendKeys(ed.excel_password(i));//get password
+			driver.findElement(By.id("regpass2")).sendKeys(ed.excel_repassword(i));//get repassword
 			driver.findElement(By.xpath("//*[@id=\"regbtn\"]")).click();
+			
 		}
 	}
+	//code for screenshot
 	public  void takeSnapShot(String path) throws Exception
 	{
 	        TakesScreenshot scrShot =((TakesScreenshot)driver);
@@ -53,6 +57,7 @@ public class Page_Register
 	        File DestFile=new File(path);
 	        FileUtils.copyFile(SrcFile, DestFile);
 	}
+	// Close method
 	public void quit() 
 	{
 		
