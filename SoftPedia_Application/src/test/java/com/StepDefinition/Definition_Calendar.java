@@ -14,7 +14,7 @@ public class Definition_Calendar
 	@Given("^Launch the browser for calendar$")
 	public void launch_the_browser_for_calendar() 
 	{
-		pcal.LaunchBrowser();
+		pcal.browserLaunch("chrome", "https://news.softpedia.com/newsArchive/");
 	}
 
 	@Then("^Select month and year$")
