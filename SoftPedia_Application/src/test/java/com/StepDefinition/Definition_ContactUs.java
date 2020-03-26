@@ -14,7 +14,7 @@ public class Definition_ContactUs
 	@Given("^The user launch the browser$")
 	public void the_user_launch_the_browser()
 	{
-		pc.LaunchBrowser();
+		pc.browserLaunch("chrome", "https://news.softpedia.com/newsArchive/");
 	}
 
 	@Then("^click on i named icon and contact us$")
