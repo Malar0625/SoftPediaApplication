@@ -12,7 +12,7 @@ public class Definition_NextPage
 	@Given("^The user Launch the application for nextpage$")
 	public void the_user_Launch_the_application_for_nextpage() throws InterruptedException
 	{
-		next.LaunchBrowser();
+		next.browserLaunch("chrome", "https://linux.softpedia.com/");
 		Thread.sleep(2000);
 	}
 	@Then("^Scroll Down and click next page$")
