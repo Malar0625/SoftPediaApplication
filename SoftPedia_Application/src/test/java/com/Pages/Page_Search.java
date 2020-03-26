@@ -20,15 +20,36 @@ public class Page_Search
 	By vlc_link=By.xpath("//*[@id=\"wrapper\"]/div[2]/div[2]/div[3]/h4/a");
 	By click_downloadnow=By.linkText("DOWNLOAD NOW");
 	By external_mirror=By.xpath("//*[@id=\"dllinks\"]/div[3]/a");
+	
 	// code for lanuch the browser
-	public void LaunchBrowser()
+	
+	public void browserLaunch(String browser,String url)
 	{
-		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\Driver\\chromedriver.exe");
-		driver=new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-		driver.get("https://www.softpedia.com/dyn-search.php?search_term");
-	}
+		try {
+					//To launch firefox Browser
+			if (browser.equalsIgnoreCase("firefox")) {
+				System.setProperty("webdriver.gecko.driver","src//test//resources//Driver//geckodriver.exe");
+				driver = new FirefoxDriver();
+			}
+					// To launch chrome Browser
+			else if (browser.equalsIgnoreCase("chrome")) {
+				System.setProperty("webdriver.chrome.driver","src//test//resources//Driver//chromedriver.exe");
+				driver=new ChromeDriver();
+			}
+					// To launch InternetExplorer
+			else if (browser.equalsIgnoreCase("Internet Explore")) {
+					System.setProperty("webdriver.ie.driver","src//test//resources//Driver//IEDriverServer.exe");
+				driver=new InternetExplorerDriver();  
+			}
+					//to maximize the window
+			driver.manage().window().maximize(); 
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.get(url);
+		
+		} catch (WebDriverException e) {
+			System.out.println("Browser could not be launched");
+		}
+	}		
 	//search for vlc media player using xpath
 	public void Search()
 	{
