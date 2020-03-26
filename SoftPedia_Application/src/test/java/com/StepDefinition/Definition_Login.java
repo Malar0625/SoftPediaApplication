@@ -15,7 +15,7 @@ public class Definition_Login
 	@Given("^The user launch the application$")
 	public void the_user_launch_the_application() 
 	{
-		pl.LaunchBrowser();
+		pl.browserLaunch("chrome", "https://linux.softpedia.com/");
 	}
 	@Then("^clicking on the user icon and enter username and password$")
 	public void clicking_on_the_user_icon_and_enter_username_and_password()
