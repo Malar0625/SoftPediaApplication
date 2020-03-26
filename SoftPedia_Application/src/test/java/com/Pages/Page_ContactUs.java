@@ -24,14 +24,33 @@ public class Page_ContactUs
 	By click_send=By.xpath("//*[@id=\"spradio_ctf_1\"]/button");
 	
 	//code for launch browser
-	public void LaunchBrowser()
+	public void browserLaunch(String browser,String url)
 	{
-		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\Driver\\chromedriver.exe");
-		driver=new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-		driver.get("https://www.softpedia.com/");
-	}
+		try {
+					//To launch firefox Browser
+			if (browser.equalsIgnoreCase("firefox")) {
+				System.setProperty("webdriver.gecko.driver","src//test//resources//Driver//geckodriver.exe");
+				driver = new FirefoxDriver();
+			}
+					// To launch chrome Browser
+			else if (browser.equalsIgnoreCase("chrome")) {
+				System.setProperty("webdriver.chrome.driver","src//test//resources//Driver//chromedriver.exe");
+				driver=new ChromeDriver();
+			}
+					// To launch InternetExplorer
+			else if (browser.equalsIgnoreCase("Internet Explore")) {
+					System.setProperty("webdriver.ie.driver","src//test//resources//Driver//IEDriverServer.exe");
+				driver=new InternetExplorerDriver();  
+			}
+					//to maximize the window
+			driver.manage().window().maximize(); 
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.get(url);
+		
+		} catch (WebDriverException e) {
+			System.out.println("Browser could not be launched");
+		}
+	}	
 	//Click the contact us field using move to element method
 	public void contactus()
 	{
