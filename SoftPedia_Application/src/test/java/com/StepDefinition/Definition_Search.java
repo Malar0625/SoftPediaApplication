@@ -18,7 +18,7 @@ public class Definition_Search
 	@Given("^The user launch the softpedia application$")
 	public void the_user_launch_the_softpedia_application() 
 	{
-		ps.LaunchBrowser();
+		ps.browserLaunch("chrome", "https://news.softpedia.com/newsArchive/");
 	}
 
 	@Then("^The User enter the word for search$")
